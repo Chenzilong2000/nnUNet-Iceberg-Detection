@@ -13,6 +13,7 @@ Accurate and large-scale iceberg detection is essential for monitoring ice-shelf
 
 The trained model is further applied to generate quarterly iceberg distribution maps across four representative iceberg aggregation regions from 2015 to 2025.
 
+To facilitate reproducibility and practical application, this repository provides the trained nnU-Net model, allowing users to directly detect icebergs in Sentinel-1 SAR EW imagery without retraining. Users can download the pretrained model and run the provided inference scripts to generate georeferenced iceberg detection results.
 ## Key Features
 
 - **Automated iceberg segmentation:** Pixel-level iceberg detection in Sentinel-1 SAR imagery using nnU-Net.
