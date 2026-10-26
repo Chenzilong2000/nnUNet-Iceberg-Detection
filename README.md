@@ -1,12 +1,11 @@
 # nnUNet-Iceberg-Detection
 Automated iceberg detection in Sentinel-1 SAR imagery using nnU-Net
-# Iceberg Detection in SAR Imagery Using nnU-Net
 
 This repository provides the source code for **automated iceberg detection and segmentation in Sentinel-1 Synthetic Aperture Radar (SAR) imagery using nnU-Net**.
 
 The framework is designed to support large-scale iceberg mapping in Antarctic coastal waters under varying environmental and sea-ice conditions.
 
-The code accompanies the manuscript:**Out-of-the-box iceberg detection in SAR imagery using nnU-Net**
+The code accompanies the manuscript: **Out-of-the-box iceberg detection in SAR imagery using nnU-Net**
 
 ## Overview
 
@@ -23,15 +22,14 @@ The trained model is further applied to generate quarterly iceberg distribution 
 
 ## Study Regions
 
-The study focuses on four representative iceberg aggregation regions around Antarctica:
+The study focuses on four representative iceberg aggregation regions around Antarctica, each encompassing multiple glaciers and ice shelves:
 
-| Region | Study area |
+| Region | Representative location |
 |---|---|
-| Region I | Totten |
-| Region II | Getz |
-| Region III | Thwaites |
-| Region IV | Prince Harald |
-
+| Region I | Totten region |
+| Region II | Getz region |
+| Region III | Thwaites region |
+| Region IV | Prince Harald region |
 ## Software Requirements
 
 The model was developed and evaluated using the following computational environment:
@@ -76,18 +74,27 @@ Detailed execution instructions and example commands will be added as the code i
 
 ## Model Performance
 
-Independent testing across Antarctic regions and seasons yielded the following mean F1 scores:
+Independent testing across Antarctic regions and seasons yielded the following pixel-level and object-level F1 scores:
 
-| Evaluation level | Mean F1 score |
-|---|---|
-| Pixel level | 0.904 |
-| Object level | 0.856 |
+| Region | Test scene | Pixel-level F1 | Object-level F1 |
+|---|---|---:|---:|
+| Region I | 2015-04 | 0.790 | 0.822 |
+| Region II | 2015-07 | 0.902 | 0.881 |
+| Region III | 2015-04 | 0.971 | 0.863 |
+| Region III | 2015-07 | 0.979 | 0.904 |
+| Region III | 2015-10 | 0.981 | 0.870 |
+| Region III | 2016-01 | 0.965 | 0.897 |
+| Region IV | 2016-01 | 0.742 | 0.755 |
+| **Mean** | — | **0.904** | **0.856** |
+| **SD** | — | **0.099** | **0.052** |
+
+The independent accuracy assessment included iceberg objects with areas of at least 0.1 km². Object-level F1 scores were calculated using an Intersection over Union (IoU) matching threshold of 0.5.
 
 Using the trained model, a total of **574,511 icebergs** with areas of at least 0.04 km² were detected across four Antarctic study regions during 2015–2025.
 
 ## License
 
-The licensing information for this repository is provided in the `LICENSE` file.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
